@@ -1,0 +1,7 @@
+ARG_ENABLE('sodium_filter', 'sodium_filter support', 'no');
+
+if (PHP_SODIUM_FILTER != 'no') {
+	AC_DEFINE('HAVE_SODIUM_FILTER', 1, 'sodium_filter support enabled');
+
+	EXTENSION('sodium_filter', 'sodium_filter.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
